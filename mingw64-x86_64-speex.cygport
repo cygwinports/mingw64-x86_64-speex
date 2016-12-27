@@ -2,7 +2,7 @@ CROSS_HOST="x86_64-w64-mingw32"
 inherit cross
 
 NAME="mingw64-x86_64-speex"
-VERSION=1.2rc1
+VERSION=1.2.0
 RELEASE=1
 CATEGORY="Devel"
 SUMMARY="Xiph Speex codec for Win64 toolchain"
@@ -13,6 +13,9 @@ speech codecs."
 HOMEPAGE="http://www.speex.org/"
 SRC_URI="http://downloads.xiph.org/releases/speex/speex-${VERSION}.tar.gz"
 SRC_DIR="speex-${VERSION}"
+
+# was originally shipped with speex
+REQUIRES="mingw64-x86_64-speexdsp"
 
 src_install() {
 	cd ${B}
